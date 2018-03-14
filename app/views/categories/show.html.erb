@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @category.game_id %>
+</p>
+
+<p>
+  <strong>Cat name:</strong>
+  <%= @category.cat_name %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @category.time %>
+</p>
+
+<p>
+  <strong>Video url:</strong>
+  <%= @category.video_url %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

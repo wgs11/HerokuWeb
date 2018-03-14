@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game_id: MyString
+  cat_name: MyString
+  time: 1
+  video_url: MyString
+
+two:
+  game_id: MyString
+  cat_name: MyString
+  time: 1
+  video_url: MyString
