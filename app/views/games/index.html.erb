@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<div>
+
+<div class="game_table" style="float:left">
+  <h1>Games</h1>
+<table>
+  <% @games.each do |game| %>
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" style="border-style:solid">
+      <td class="image"><%= image_tag(game.image_url, class: 'list_image') %>
+      </td>
+      <ul>
+        <td class="times">
+          <% (Category.where(game_id: game.name)).each do |category| %>
+            <li><a href="http://www.youtube.com/embed/<%=category.video_url%>"target="ytplayer"><%= category.cat_name %>: <%= num_to_time(category.time) %></a></li>
+            </ul>
+          <% end %>
+          </td>
+          <% if Rails.env.production? %>
+          <td class="list_actions">
+            <%= link_to 'Show', game %> </br>
+            <%= link_to 'Edit', edit_game_path(game) %></br>
+            <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+            <% end %>
+          </tr>
+  <% end %>
+</table>
+  <%= link_to 'New Game', new_game_path%>
+</div>
+  <h1 style="padding-top:16px;">VOD</h1>
+<div class="vod_container" id="content" style="float:left; margin-top:9px;">
+    <iframe name="ytplayer" id="ytplayer" frameborder="0" allow="autoplay; encrypted-media"allowfullscreen></iframe>
+</div>
+</div>
+<br>
