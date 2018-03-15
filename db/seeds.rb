@@ -1,7 +1,7 @@
 Donation.delete_all
 Game.delete_all
 Category.delete_all
-Heros.delete_all
+Hero.delete_all
 
 Games = [
     ["Super Mario 64", "sm64logo.png"],
