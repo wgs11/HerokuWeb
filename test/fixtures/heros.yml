@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  total: 1
+  unlocks: 1
+  image_url: MyString
+
+two:
+  name: MyString
+  total: 1
+  unlocks: 1
+  image_url: MyString

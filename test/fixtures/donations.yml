@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  progress: 9.99
+  total: 9.99
+  incentive: MyString
+  image_url: MyString
+
+two:
+  progress: 9.99
+  total: 9.99
+  incentive: MyString
+  image_url: MyString

@@ -1,0 +1,9 @@
+<% provide(:title, @user.display_name) %>
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.display_name %>
+</h1>
+<a href="#" id="show_hide">Edit</a>
+<div id="show" class="hidden">
+  <div>@user.display_name</div>
+</div>

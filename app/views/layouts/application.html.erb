@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Depot</title>
+  <title>Shepland</title>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'application', media: 'all',
-                          'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
+
 <body class='<%= controller.controller_name %>'>
-<%= yield %>
+<% if !current_page?(root_path) %>
+  <div id="banner">
+    <%= image_tag 'Logo1.png' %>
+    <% if logged_in? %>
+      <div class = "form-inline" style="display: inline-block;">
+        <%= link_to 'Profile', current_user %> |
+        <%= link_to "Log Out", logout_path, method: :delete %>
+      </div>
+    <% else %>
+      <div id = "login" style="display: inline-block;">
+        <%= form_for(:session, url: login_path, :html => { :class => "form-inline"}) do |f| %>
+          <%= f.label :twitch_profile_name %>:&nbsp;  <%=f.text_field :twitch_profile_name, class: 'form-control' %>&nbsp <%=f.label :password %>:&nbsp;  <%= f.password_field :password, class: 'form-control' %> &nbsp <%= f.submit "Log In", class: "btn btn-primary" %>
+        <% end %>
+    <% end %>
+    </div>
+    <span class="title"><%= @page_title %></span>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <li><%= link_to 'Games', games_path %></li>
+        <li><%= link_to 'Heros', '#' %></li>
+        <li><%= link_to 'Incentives', '#' %></li>
+      </ul>
+    </div>
+    <div id="main">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert"-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
+      </div>
+  </div>
+<% else %>
+  <div id="main">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert"-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+    </div>
+<% end %>
 </body>
 </html>
