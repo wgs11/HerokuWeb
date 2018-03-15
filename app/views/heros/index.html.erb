@@ -15,7 +15,9 @@
     <table>
       <%= render(Array(@heros)[0,(@heros.length) / 2]) %>
     </table>
+    <% if Rails.env.development? %>
     <%= link_to 'New Hero', new_hero_path %>
+      <% end %>
   </div>
   <div style="float:left; width: 45%;">
     <table>
