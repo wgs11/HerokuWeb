@@ -1,33 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Heros</h1>
+<h1>Heroes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Total</th>
-      <th>Unlocks</th>
-      <th>Image url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @heros.each do |hero| %>
-      <tr>
-        <td><%= hero.name %></td>
-        <td><%= hero.total %></td>
-        <td><%= hero.unlocks %></td>
-        <td><%= hero.image_url %></td>
-        <td><%= link_to 'Show', hero %></td>
-        <td><%= link_to 'Edit', edit_hero_path(hero) %></td>
-        <td><%= link_to 'Destroy', hero, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Hero', new_hero_path %>
+<div style="border: solid; display: inline-block; padding: 0 2px; border-bottom: none">
+  <h2 style="padding-left: 2px; display:inline-block; margin-right: 10px">Unlocks: <%= get_unlocks(@heros) %> / <%= get_totals(@heros) %></h2>
+  <div class="container" style="padding-bottom: 1em;">
+    <div class="progress">
+      <div class="progress-bar" style="padding-left: 50%; width:<%=get_ratio(@heros)%>%;"><%=get_ratio(@heros)%>%</div>
+    </div>
+  </div>
+</div>
+<div>
+  <div style="float:left; width: 30%;">
+    <table>
+      <%= render(Array(@heros)[0,(@heros.length) / 2]) %>
+    </table>
+    <%= link_to 'New Hero', new_hero_path %>
+  </div>
+  <div style="float:left; width: 30%;">
+    <table>
+      <%= render(Array(@heros)[(@heros.length / 2),@heros.length]) %>
+    </table>
+  </div>
+</div>

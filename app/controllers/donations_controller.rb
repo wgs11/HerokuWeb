@@ -5,6 +5,9 @@ class DonationsController < ApplicationController
   # GET /donations.json
   def index
     @donations = Donation.all
+    @ratio = @donations.sort_by{|x|
+      x.progress / x.total
+    }.reverse!
   end
 
   # GET /donations/1
@@ -28,7 +31,7 @@ class DonationsController < ApplicationController
 
     respond_to do |format|
       if @donation.save
-        format.html { redirect_to @donation, notice: 'Donation was successfully created.' }
+        format.html { redirect_to @donation, notice: 'Donation was successfullwy created.' }
         format.json { render :show, status: :created, location: @donation }
       else
         format.html { render :new }
@@ -62,13 +65,13 @@ class DonationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_donation
-      @donation = Donation.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_donation
+    @donation = Donation.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def donation_params
-      params.require(:donation).permit(:progress, :total, :incentive, :image_url)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def donation_params
+    params.require(:donation).permit(:progress, :total, :incentive, :image_url)
+  end
 end

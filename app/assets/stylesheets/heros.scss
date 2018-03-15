@@ -1,3 +1,57 @@
-// Place all the styles related to the Heros controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.heros {
+  table {
+    border-collapse: collapse;
+  }
+  .progress {
+    background-color: #fe8f36;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: solid;
+  }
+  .progress-bar {
+    padding-left: 44%;
+  }
+  table tr td {
+    padding: 5px;
+    vertical-align: top;
+  }
+  table td {
+    width: 15%;
+  }
+  .list_image {
+    max-width: 100%;
+  }
+  .thing_description {
+    width: 200px;
+  }
+  .list_description {
+    width: 60%;
+
+    dl {
+      margin: 0;
+    }
+
+    dt {
+      color: #244;
+      font-weight: bold;
+      font-size: larger;
+    }
+
+    dd {
+      margin: 0;
+    }
+  }
+  .list_actions {
+    font-size:  x-small;
+    text-align: right;
+    padding-left: 1em;
+  }
+
+  .list_line_even {
+    background: #218ffe;
+  }
+
+  .list_line_odd {
+    background: #f0f0f0
+  }
+}
