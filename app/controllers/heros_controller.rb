@@ -1,6 +1,5 @@
 class HerosController < ApplicationController
   before_action :set_hero, only: [:show, :edit, :update, :destroy]
-
   # GET /heros
   # GET /heros.json
   def index
@@ -37,6 +36,20 @@ class HerosController < ApplicationController
     end
   end
 
+  def add
+    @hero = Hero.find(params[:hero_id])
+    @hero.increment!(:unlocks)
+    respond_to do |format|
+      format.html {
+        redirect_to heros_url
+      }
+      format.js
+      format.json {
+        render :show, status: :added, location: @hero
+      }
+    end
+  end
+
   # PATCH/PUT /heros/1
   # PATCH/PUT /heros/1.json
   def update
@@ -62,13 +75,13 @@ class HerosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hero
-      @hero = Hero.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hero
+    @hero = Hero.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def hero_params
-      params.require(:hero).permit(:name, :total, :unlocks, :image_url)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def hero_params
+    params.require(:hero).permit(:name, :total, :unlocks, :image_url)
+  end
 end

@@ -12,11 +12,11 @@
         <div class="progress-bar" style="width:<%=ratio(hero)%>%;"><%=ratio(hero)%>%</div>
       </div>
     </dl>
-    <% if Rails.env.production? %>
+    <% if Rails.env.development? %>
       <%= button_to 'add', hero_add_path(hero), method: :put, remote: true %>
     <% end %>
   </td>
-  <% if Rails.env.production? %>
+  <% if Rails.env.development? %>
     <td class="list_actions">
       <%= link_to 'Show', hero %><br/>
       <%= link_to 'Edit', edit_hero_path(hero) %><br/>

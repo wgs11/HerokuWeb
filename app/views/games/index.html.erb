@@ -15,7 +15,7 @@
                 </ul>
               <% end %>
               </td>
-              <% if Rails.env.production? %>
+              <% if Rails.env.development? %>
                 <td class="list_actions">
                   <%= link_to 'Show', game %> </br>
                   <%= link_to 'Edit', edit_game_path(game) %></br>
@@ -25,7 +25,9 @@
               </tr>
       <% end %>
     </table>
+    <% if Rails.env.development? %>
     <%= link_to 'New Game', new_game_path%>
+    <% end %>
   </div>
   <h1 style="padding-top:16px;">VOD</h1>
   <div class="vod_container" id="content" style="float:left; margin-top:9px;">
