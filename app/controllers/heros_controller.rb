@@ -1,4 +1,5 @@
 class HerosController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_hero, only: [:show, :edit, :update, :destroy]
   # GET /heros
   # GET /heros.json
@@ -18,8 +19,23 @@ class HerosController < ApplicationController
 
   # GET /heros/1/edit
   def edit
+    @hero = Hero.find(params[:id])
   end
 
+  def add_custom
+    @hero = Hero.find(params[:hero_id])
+    @value = params[:increment_amount]
+    @hero.increment!(:unlocks, @value.to_i)
+    respond_to do |format|
+      format.html {
+        redirect_to heros_url
+      }
+      format.js
+      format.json {
+        render :show, status: :added, location: @hero
+      }
+    end
+  end
   # POST /heros
   # POST /heros.json
   def create
@@ -82,6 +98,6 @@ class HerosController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def hero_params
-    params.require(:hero).permit(:name, :total, :unlocks, :image_url)
+    params.require(:hero).permit(:name, :total, :unlocks, :image_url, :increment_amount)
   end
 end
