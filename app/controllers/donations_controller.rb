@@ -20,6 +20,20 @@ class DonationsController < ApplicationController
     @donation = Donation.new
   end
 
+  def add_custom
+    @donation = Donation.find_by_incentive(params[:incentive])
+    @value = params[:increment_amount]
+    @hero.increment!(:unlocks, @value.to_f)
+    respond_to do |format|
+      format.html {
+        redirect_to heros_url
+      }
+      format.js
+      format.json {
+        render :show, status: :added, location: @hero
+      }
+    end
+  end
   # GET /donations/1/edit
   def edit
   end

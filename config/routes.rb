@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
+  put '/donations/add_custom', to: 'donations#add_custom'
+  put '/heros/add_custom', to: 'heros#add_custom'
   resources :users
   resources :donations
   resources :videos

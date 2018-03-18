@@ -23,7 +23,7 @@ class HerosController < ApplicationController
   end
 
   def add_custom
-    @hero = Hero.find(params[:hero_id])
+    @hero = Hero.find_by_name(params[:name])
     @value = params[:increment_amount]
     @hero.increment!(:unlocks, @value.to_i)
     respond_to do |format|
