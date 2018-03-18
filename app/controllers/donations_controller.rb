@@ -23,7 +23,7 @@ class DonationsController < ApplicationController
   def add_custom
     @donation = Donation.find_by_incentive(params[:incentive])
     @value = params[:increment_amount]
-    @hero.increment!(:progress, @value.to_f)
+    @donation.increment!(:progress, @value.to_f)
     respond_to do |format|
       format.html {
         redirect_to heros_url
