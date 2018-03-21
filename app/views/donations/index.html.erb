@@ -11,7 +11,7 @@
         <%= link_to('Edit',edit_donation_path(donation)) %></td>
           <% end %>
       <td class="pbar">
-        <h3>Goal: $<%=donation.total%></h3>
+        <h3>Progress: $<%=donation.progress%> / $<%=donation.total%></h3></br>
         <dl>
           <div class="progress">
             <div class="progress-bar" style="width:<%=calc_ratio(donation)%>%;"><%=calc_ratio(donation)%>%</div>
