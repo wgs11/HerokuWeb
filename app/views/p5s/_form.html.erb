@@ -1,0 +1,27 @@
+<%= form_for(p5) do |f| %>
+  <% if p5.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(p5.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% p5.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class = "field">
+    <%= f.label :script_body %>
+    <%= f.text_area :script_body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

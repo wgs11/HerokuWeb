@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :p5s
   get 'sessions/new'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   put '/donations/add_custom', to: 'donations#add_custom'
   put '/heros/add_custom', to: 'heros#add_custom'
+  resources :p5s
   resources :users
   resources :donations
   resources :videos

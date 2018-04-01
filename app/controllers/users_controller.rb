@@ -56,5 +56,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:twitch_profile_name, :display_name, :password, :password_confirmation)
   end
-
 end

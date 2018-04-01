@@ -1,0 +1,9 @@
+<% provide(:title, @p5.name) %>
+<h1>
+  <%= @p5.name %>
+</h1>
+<div>
+  <script>
+  <%= (@p5.script_body).html_safe %>
+  </script>
+</div>
