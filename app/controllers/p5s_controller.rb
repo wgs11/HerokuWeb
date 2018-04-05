@@ -1,5 +1,6 @@
 class P5sController < ApplicationController
     before_action :set_p5, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate, only: [:edit, :create, :update, :destroy, :new]
 
     def index
       @p5s = P5.all
