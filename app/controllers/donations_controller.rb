@@ -2,7 +2,6 @@ class DonationsController < ApplicationController
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
   before_action :authenticate, only: [:edit, :create, :update, :destroy, :new]
-
   # GET /donations
   # GET /donations.json
   def index
@@ -25,17 +24,14 @@ class DonationsController < ApplicationController
   def add_custom
     @donation = Donation.find_by_incentive(params[:incentive])
     @value = params[:increment_amount]
-    @donation.increment!(:progress, @value.to_f)
-    respond_to do |format|
-      format.html {
-        redirect_to heros_url
-      }
-      format.js
-      format.json {
-        render :show, status: :added, location: @hero
-      }
+    @request_key = params[:request_key]
+    if @request_key == Rails.application.secrets.REQUEST_KEY
+      @donation.increment!(:progress, @value.to_f)
+    else
+      render(:file => File.join(Rails.root, 'public/401'), :formats => [:html], :status => 401, :layout => false)
     end
   end
+
   # GET /donations/1/edit
   def edit
   end
