@@ -1,3 +1,63 @@
-// Place all the styles related to the p5s controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.p5s {
+  table {
+    border-collapse: collapse;
+
+  }
+
+  .scripts_container {
+    max-width: 69%;
+  }
+  .game_table {
+    max-width: 30%;
+  }
+  #script_content {
+    width: 69%;
+    height: 0;
+    padding-bottom: 38.8125%;
+    position: relative;
+
+  }
+  #script_content iframe {
+//    background-image: url("https://i.imgur.com/h5ZDW6U.jpg");
+//    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    border: solid;
+  }
+  table tr {
+    padding: 5px;
+    vertical-align: top;
+    width: 50%;
+  }
+
+  .list_description {
+    width: 60%;
+
+    dl {
+      margin: 0;
+    }
+
+    dt {
+      color: #244;
+      font-weight: bold;
+      font-size: larger;
+    }
+
+    dd {
+      margin: 0;
+    }
+  }
+
+
+  .list_line_even {
+    background: #218ffe;
+  }
+
+  .list_line_odd {
+    background: #f0f0f0
+  }
+}

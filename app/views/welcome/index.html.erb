@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <body id="home_page_body">
-<div class = "image-container">
-  <%= link_to image_tag("yt.png", class: 'link_image'), games_path %>
-  <br/><br/>
-  <%= link_to image_tag("owlogo.png", class: 'link_image'), heros_path  %>
+
+<div id = "site">
+  <%= link_to image_tag("sheepcover.png", class: 'link_image'), games_path %>
 </div>
+<div id = "twitch">
+  <%= link_to image_tag("twitchhex.png", class: 'link_image'), "https://www.twitch.tv/sheppy" %>
+</div>
+<div id = "youtube">
+  <%= link_to image_tag("hexyt", class: 'link_image'), "https://www.youtube.com/user/geekoutnerdrage" %>
+</div>
+<div id = "twitter">
+  <%= link_to image_tag("twitterhex.png", class: 'link_image'), "https://twitter.com/SheppySage" %>
+</div>
+
 </body>
 </html>

@@ -6,11 +6,33 @@
   background-size: cover;
 }
 
-.image-container {
-  max-width: 10%;
+#twitter {
+  max-width: 16.5%;
   position: absolute;
-  top: 25%;
-  right: 20%;
+  top: 31.3%;
+  right: 16.1%;
+}
+
+#youtube {
+  max-width: 16.5%;
+  position: absolute;
+  top: 31.3%;
+  right: 67.3%;
+}
+
+#twitch {
+  max-width: 16.5%;
+  position: absolute;
+  top: 60.1%;
+  right: 75.9%;
+}
+
+#site {
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  top: 10%;
+  right: 14.75%;
 }
 
 .link_image {
