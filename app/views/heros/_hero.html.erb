@@ -1,27 +1,14 @@
 <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" style="border-style:solid;">
-  <td>
-    <%= image_tag(hero.image_url, class: 'list_image') %>
-  </td>
   <td class="thing_description">
-    <dl>
-      <% if Rails.env.production? %>
-        <%= hero.unlocks %> / <%= hero.total %>
-        <br/><br/>
-      <% end %>
-      <div class="progress">
-        <div class="progress-bar" style="width:<%=ratio(hero)%>%;"><%=ratio(hero)%>%</div>
+      <div class="c100 p<%=ratio(hero)%> big">
+        <span><%= ratio(hero) %>% </br>
+        <%= image_tag(hero.image_url, class: 'list_image') %>
+
+          </span>
+        <div class="slice">
+          <div class="bar"></div>
+          <div class="fill"></div>
+        </div>
       </div>
-    </dl>
-    <% if Rails.env.development? %>
-      <%= button_to 'add', hero_add_path(hero), method: :put, remote: true %>
-    <% end %>
   </td>
-  <% if Rails.env.development? %>
-    <td class="list_actions">
-      <%= link_to 'Show', hero %><br/>
-      <%= link_to 'Edit', edit_hero_path(hero) %><br/>
-      <%= link_to 'Destroy', hero, method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-    </td>
-  <% end %>
 </tr>
