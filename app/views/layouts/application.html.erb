@@ -18,13 +18,13 @@
   <div id="banner">
     <%= link_to image_tag("testlogo.png"), root_path  %>
     <% if logged_in? %>
-      <div class = "form-inline" style="display: inline-block;">
+      <div class = "form-inline">
         <%= link_to 'Profile', current_user %> |
         <%= link_to "Log Out", logout_path, method: :delete %>
       </div>
     <% else %>
-      <div id = "login" style="display: inline-block;">
-        <%= form_for(:session, url: login_path, :html => { :class => "form-inline"}) do |f| %>
+      <div>
+        <%= form_for(:session, url: login_path, :html => {:class => "form-inline"}) do |f| %>
           <%= f.label :twitch_profile_name %>:&nbsp;  <%=f.text_field :twitch_profile_name, class: 'form-control' %>&nbsp <%=f.label :password %>:&nbsp;  <%= f.password_field :password, class: 'form-control' %> &nbsp <%= f.submit "Log In", class: "btn btn-primary" %>
         <% end %>
     <% end %>

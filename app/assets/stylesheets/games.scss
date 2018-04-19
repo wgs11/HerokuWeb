@@ -1,8 +1,8 @@
-
 .games {
   ul {
     margin: 0;
     padding: 0;
+    list-style: none;
     li {
       padding-top: 5px;
     }
@@ -11,24 +11,14 @@
     border-collapse: separate;
 
   }
-
   .vod_container {
-    max-width: 69%;
-  }
-  .game_table {
-    max-width: 30%;
-
-
-
-  }
-  #content {
+    float: left;
     width: 69%;
     height: 0;
     padding-bottom: 38.8125%;
     position: relative;
-
   }
-  #content iframe {
+  .vod_container iframe {
     background-image: url("https://i.imgur.com/h5ZDW6U.jpg");
     background-size: 100% 100%;
     width: 100%;
@@ -39,11 +29,19 @@
     left: 0;
     border: solid;
     border-radius: 25px;
+    frameborder: 0;
+    allow: autoplay encrypted-media;
   }
+  .game_table {
+    max-width: 30%;
+    float: left;
+  }
+
+
   table tr {
     padding: 5px;
     vertical-align: top;
-    width: 50%;
+    border-style: solid;
 
   }
 
@@ -52,17 +50,22 @@
   }
 
   td.times {
+    background: rgb(130, 19, 33);
     padding-top: 5%;
-    width: 15%;
+    width: 5%;
     text-align: left;
-
+    font-weight: 700;
+    a {
+      color: #08fff0;
+      font-weight: 700;
+    }
 
 
   }
     tr td {
       border-radius: 10px;
       border:solid;
-      background: rgb(152,19,33);
+      background: rgb(130, 19, 33);
 
   }
 
@@ -95,14 +98,4 @@
     }
   }
 
-
-  .list_line_even {
-
-
-
-  }
-
-  .list_line_odd {
-
-  }
 }

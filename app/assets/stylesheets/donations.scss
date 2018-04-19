@@ -1,29 +1,30 @@
-
 .donations {
-
   table {
     max-width: 60%;
-  }
-  td.incentive {
-    width: 40%;
-    text-align: center;
-  }
-  td.pbar {
-    width: 35%;
-  }
-  .image {
-    width: 25%;
-  }
-  .list_image {
-    max-width: 100%;
-    height: auto;
-  }
+    tr {
+      border-bottom: solid;
 
-  .progress {
-    background-color: #fe8f36;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: solid;
-  }
+      .incentive {
+        width: 40%;
+        text-align: center;
+      }
+      .pbar {
+        width: 35%;
+        .progress {
+          background-color: #fe8f36;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          border: solid;
+        }
+      }
+      .image {
+        width: 25%;
+      }
+      .list_image {
+        max-width: 100%;
+        height: auto;
+      }
 
+    }
+  }
 }

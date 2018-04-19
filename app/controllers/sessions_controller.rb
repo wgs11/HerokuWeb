@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    redirect_to heros_path
+    redirect_to request.referrer
   end
 end

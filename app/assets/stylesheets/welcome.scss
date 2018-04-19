@@ -1,48 +1,44 @@
-#home_page_body{
+#home_page_body {
   background: url('https://i.imgur.com/OyyUuPX.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
 
-#twitter {
-  max-width: 16.5%;
-  position: absolute;
-  top: 31.3%;
-  right: 16.1%;
-}
+  .link {
+    max-width: 16.5%;
+    position: absolute;
+  }
+  #twitter {
+    top: 31%;
+    right: 16.1%;
+  }
 
-#git {
-  max-width: 16.5%;
-  position: absolute;
-  top: 60.1%;
-  right: 7.8%;
-}
+  #git {
+    top: 60.1%;
+    right: 7.8%;
+  }
 
-#youtube {
-  max-width: 16.5%;
-  position: absolute;
-  top: 31.3%;
-  right: 67.3%;
-}
+  #youtube {
+    top: 31%;
+    right: 67.3%;
+  }
 
-#twitch {
-  max-width: 16.5%;
-  position: absolute;
-  top: 60.1%;
-  right: 75.9%;
-}
+  #twitch {
+    top: 60.1%;
+    right: 75.9%;
+  }
 
-#site {
-  height: 50%;
-  width: 50%;
-  position: absolute;
-  top: 10%;
-  right: 14.75%;
-}
+  #site {
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 10%;
+    right: 14.75%;
+  }
 
-.link_image {
-  max-width: 98%;
-  background: none;
+  .link_image {
+    max-width: 98%;
+    background: none;
+  }
 }

@@ -1,40 +1,26 @@
 <p id="notice"><%= notice %></p>
 <div>
-
-  <div class="game_table" style="float:left">
+  <div class="game_table">
     <table>
       <% @games.each do |game| %>
-        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" style="border-style:solid">
+        <tr>
           <td class="image"><%= image_tag(game.image_url, class: 'list_image') %>
           </td>
 
             <td class="times">
-              <ul style="list-style-type: none;">
+              <ul>
               <% (Category.where(game_id: game.name)).each do |category| %>
-                  <li><b><a href="//www.youtube.com/embed/<%=category.video_url%>"target="ytplayer"><%= category.cat_name %></a></b>
+                  <li><a href="//www.youtube.com/embed/<%=category.video_url%>"target="ytplayer"><%= category.cat_name %></a>
                   </br>&nbsp;&nbsp;<font color="red"><%= num_to_time(category.time) %></li></font>
-
-
               <% end %>
               </ul>
               </td>
-              <% if Rails.env.development? %>
-
-                <td class="list_actions">
-                  <%= link_to 'Show', game %> </br>
-                  <%= link_to 'Edit', edit_game_path(game) %></br>
-                  <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </td>
-              <% end %>
               </tr>
       <% end %>
     </table>
-    <% if Rails.env.development? %>
-    <%= link_to 'New Game', new_game_path%>
-    <% end %>
   </div>
-  <div class="vod_container" id="content" style="float:left;">
-    <iframe name="ytplayer" id="ytplayer" frameborder="0" allow="autoplay; encrypted-media"allowfullscreen></iframe>
+  <div class="vod_container">
+    <iframe name="ytplayer" allowfullscreen></iframe>
   </div>
 </div>
 <br>

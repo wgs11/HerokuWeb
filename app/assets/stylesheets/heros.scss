@@ -879,6 +879,25 @@
     color: #e08833;
   }
 
+  .progress-container {
+    border: solid;
+    display: inline-block;
+    padding: 0 2px;
+    border-bottom: none;
+    
+    h2 {
+    padding-left: 2px;
+    display:inline-block;
+    margin-right: 10px;
+    }
+  }
+  .table-container {
+    float: left;
+    width: 16%;
+  }
+  .pbar-container {
+    padding-bottom: 1em;
+  }
   table {
     border-collapse: collapse;
   }
@@ -889,7 +908,7 @@
     border: solid;
   }
   .progress-bar {
-    padding-left: 44%;
+    padding-left: 50%;
   }
   table tr td {
     padding: 5px;

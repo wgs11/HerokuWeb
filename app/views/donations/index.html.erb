@@ -1,15 +1,9 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Donations</h1>
-
 <table>
   <tbody>
   <% @ratio.each do |donation| %>
-    <tr style="border-bottom:solid">
+    <tr>
       <td class="image"><%= image_tag(donation.image_url, class: 'list_image') %>
-        <% if Rails.env.development? %>
-        <%= link_to('Edit',edit_donation_path(donation)) %></td>
-          <% end %>
       <td class="pbar">
         <h3>Progress: $<%=donation.progress%> / $<%=donation.total%></h3></br>
         <dl>
