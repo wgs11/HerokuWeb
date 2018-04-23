@@ -33,11 +33,21 @@
   </div>
   <div id="columns">
     <div id="side">
-      <ul>
-        <li><%= link_to 'Games', games_path %></li>
-        <li><%= link_to 'Heros', heros_path %></li>
-        <li><%= link_to 'Incentives', donations_path %></li>
-      </ul>
+      <div class = "hex-container">
+      <%= link_to image_tag("githex.png", title: "Github", class: 'link_image'), "https://github.com/wgs11" %>
+      </div>
+
+      <div class = "hex-container">
+        <%= link_to image_tag("overhex.png", title: "Heros", class: 'link_image'), heros_path %>
+      </div>
+
+      <div class = "hex-container">
+        <%= link_to image_tag("overhex.png", title: "Incentives", class: 'link_image'), donations_path %>
+      </div>
+
+      <div class = "hex-container">
+        <%= link_to image_tag("vodhex.png", title: "VOD", class: 'link_image'), games_path %>
+      </div>
     </div>
     <div id="main">
       <% flash.each do |message_type, message| %>

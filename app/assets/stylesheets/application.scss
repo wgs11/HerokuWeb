@@ -66,8 +66,25 @@ body {
     }
 
     #side {
-      padding: 4em 1em;
+      max-width: 5%;
+      padding-top: 4em;
       background: linear-gradient(#000, #981321);
+      .hex-container {
+        margin: 0 auto;
+        width: 95%;
+        text-align: center;
+        min-height: 90px;
+        img, a {
+          width: 75%;
+
+        }
+
+      }
+      .hex-container:hover {
+        img, a {
+          width: 95%;
+        }
+      }
       ul {
         margin: 0;
         padding: 0;
